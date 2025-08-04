@@ -1,0 +1,9 @@
+{
+    "name": "PGS CLI",
+    "fullname": "PGS Command Line Interface",
+    "version": "1.0.0",
+    "build": "pgs-cli/pgsio",
+    "description": "The PGS CLI is a lightweight, developer-friendly command-line\ninterface that streamlines project and management with\nbuilt-in authentication.Whether you're bootstrapping a new project or\nmanaging secure workflows,pgs keeps things fast, consistent, and secure.",
+    "author": "Alan Sha Salim",
+    "website": "https://cli.pgsio.com"
+}
