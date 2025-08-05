@@ -2,7 +2,7 @@
 
 ![PGS CLI Banner](https://storage.devpgs.app/u/IvaTp6.png)
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/pgs-cli)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/pgsio-cli)
 [![License](https://img.shields.io/badge/license-ISC-green.svg)](https://opensource.org/licenses/ISC)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
 
@@ -26,20 +26,20 @@ The **PGS CLI** is a lightweight, developer-friendly command-line interface that
 ### Global Installation (Recommended)
 
 ```bash
-npm install -g pgs-cli
+npm install -g pgsio-cli
 ```
 
 ### Local Installation
 
 ```bash
-npm install pgs-cli
+npm install pgsio-cli
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/pgs-cli.git
-cd pgs-cli
+git clone https://github.com/yourusername/pgsio-cli.git
+cd pgsio-cli
 npm install
 npm link
 ```
@@ -114,7 +114,7 @@ PGS CLI stores its configuration in `cli.json` and authentication tokens in `.pg
     "name": "PGS CLI",
     "fullname": "PGS Command Line Interface",
     "version": "1.0.0",
-    "build": "pgs-cli/pgsio",
+    "build": "pgsio-cli/pgsio",
     "description": "The PGS CLI is a lightweight, developer-friendly command-line interface...",
     "author": "Alan Sha Salim",
     "website": "https://cli.pgsio.com"
@@ -124,7 +124,7 @@ PGS CLI stores its configuration in `cli.json` and authentication tokens in `.pg
 ## 🏗️ Project Structure
 
 ```
-PGS-CLI/
+pgsio-cli/
 ├── cli/
 │   ├── commands/          # Command implementations
 │   │   ├── auth.js        # Authentication commands
@@ -152,8 +152,8 @@ PGS-CLI/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pgs-cli.git
-cd pgs-cli
+git clone https://github.com/yourusername/pgsio-cli.git
+cd pgsio-cli
 
 # Install dependencies
 npm install
@@ -227,8 +227,8 @@ This project is licensed under the ISC License. See the [LICENSE](LICENSE) file 
 If you encounter any issues or need help:
 
 1. Check the [documentation](https://cli.pgsio.com)
-2. Search [existing issues](https://github.com/yourusername/pgs-cli/issues)
-3. Create a [new issue](https://github.com/yourusername/pgs-cli/issues/new)
+2. Search [existing issues](https://github.com/yourusername/pgsio-cli/issues)
+3. Create a [new issue](https://github.com/yourusername/pgsio-cli/issues/new)
 
 ## 🔄 Changelog
 
