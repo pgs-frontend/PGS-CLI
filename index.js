@@ -6,6 +6,8 @@ import config from "./cli/config.js";
 import TemplatesSection from "./cli/commands/templates.js";
 import {AuthChecker, LogoutSection, LoginSection, CLIDefaultSection} from "./cli/app.js";
 
+export const ROOT = process.cwd()
+
 const program = new Command();
 
 export const session = {}
