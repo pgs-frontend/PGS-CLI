@@ -1,11 +1,8 @@
 import { helpCommands, versionCommand } from "./start.js";
 import auth from "./commands/auth.js";
 import chalk from "chalk";
-import initCLI from "./commands/initCLI.js";
 
 async function CLICommands(option) {
-
-    await initCLI();
 
     if(option.help) {
         helpCommands();

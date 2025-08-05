@@ -1,10 +1,9 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 const cliAPI = axios.create({
-    baseURL: 'https://api.pgscli.com',
+    baseURL: 'https://api.pgsio.com/api',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': ''
     }
 })
 

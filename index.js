@@ -6,12 +6,26 @@ import CLICommands from "./cli/index.js";
 import config from "./cli/config.js";
 import auth from "./cli/commands/auth.js";
 import createTemplate from "./cli/commands/create.js";
+import {AuthChecker} from "./cli/app.js";
 
-startPGSCLI()
+const program = new Command();
 
 async function PGSCli(){
 
-    const program = new Command();
+    startPGSCLI()
+
+    program
+    .command("login")
+    .description("Login to the system")
+    .option("-e, --email <email>", "Email")
+    .option("-p, --password <password>", "Password")
+    .action(auth.login);
+
+    program
+    .command("logout")
+    .action(auth.logout);
+
+    await AuthChecker()
 
     program
         .name(config.name)
@@ -24,17 +38,6 @@ async function PGSCli(){
         .option("-v, --ver", "Show help information")
         .option("-u, --user <user>", "User management")
         .action(CLICommands);
-
-    program
-        .command("login")
-        .description("Login to the system")
-        .option("-e, --email <email>", "Email")
-        .option("-p, --password <password>", "Password")
-        .action(auth.login);
-
-    program
-        .command("logout")
-        .action(auth.logout);
 
     program
         .command("create")
