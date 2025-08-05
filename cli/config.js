@@ -1,5 +1,11 @@
-import fs from 'fs';
-
-const config = JSON.parse(fs.readFileSync(process.cwd() + '/cli.json', 'utf8'));
+const config = {
+    name: "PGSIO CLI",
+    fullname: "PGSIO Command Line Interface",
+    version: "1.0.3",
+    build: "pgsio-cli/pgsio",
+    description: "The PGSIO CLI is a lightweight, developer-friendly command-line\ninterface that streamlines project and management with\nbuilt-in authentication.Whether you're bootstrapping a new project or\nmanaging secure workflows,pgs keeps things fast, consistent, and secure.",
+    author: "Alan Sha Salim",
+    website: "https://cli.pgsio.com"
+};
 
 export default config;
