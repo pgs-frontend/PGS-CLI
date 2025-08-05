@@ -66,7 +66,7 @@ async function AuthSection() {
             await CreateUserSection()
           }
     }catch(error){
-        console.log(error)
+       process.exit(0)
     }finally{
         console.log(('\n---------------------------------------------------------------------\n'));
     }
@@ -283,6 +283,7 @@ async function LandingSection() {
                 {name: '📚 Ebooks', value: 'ebooks'},
                 {name: '⏯️ Tutorials', value: 'tutorials'},
                 {name: '👤 My Account', value: 'my-account'},
+                {name: '🛑 Exit', value: 'exit'},
             ]
         })
 
@@ -298,6 +299,9 @@ async function LandingSection() {
                 break
             case 'my-account':
                 await AccountSection()
+                break
+            case 'exit':
+                process.exit(0)
                 break
         }
 

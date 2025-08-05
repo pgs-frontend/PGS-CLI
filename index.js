@@ -5,6 +5,7 @@ import startPGSCLI from './cli/start.js';
 import config from "./cli/config.js";
 import TemplatesSection from "./cli/commands/templates.js";
 import {AuthChecker, LogoutSection, LoginSection, CLIDefaultSection} from "./cli/app.js";
+import chalk from "chalk";
 
 export const ROOT = process.cwd()
 
@@ -53,8 +54,16 @@ async function PGSCli(){
 
 PGSCli()
 
-process.on('uncaughtException', (error) => {
-    if (error instanceof Error && error.name === 'ExitPromptError') {
-      //
-    } else {}
-  });
+process.on('exit', (code) => {
+ console.log(chalk.gray(`👋 Exiting PGSIO CLI (code ${code})`));
+});
+
+process.on('SIGINT' || 'SIGTERM', () => {
+    console.log(chalk.redBright('\n🛑 Interrupted by user'));
+    process.exit(0);
+});
+
+process.on('uncaughtException', (err) => {
+    console.error(chalk.red('💥 Fatal Error:'), err.message);
+    process.exit(1);
+});
