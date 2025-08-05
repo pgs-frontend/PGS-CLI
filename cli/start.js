@@ -4,7 +4,7 @@ import gradient, {cristal, mind, teen} from 'gradient-string';
 import config from './config.js';
 import fs from 'fs';
 
-const pgsGradient = gradient(['#00B574', '#00A084', '#68E2B6'])
+export const pgsGradient = gradient(['#00B574', '#00A084', '#68E2B6'])
 
 function startPGSCLI() {
 
@@ -38,7 +38,7 @@ console.log(('\n----------------------------------------------------------------
 console.log(chalk.bold(teen('- Website')));
 console.log(`${chalk.bold(config.website)}`);
 console.log(('\n---------------------------------------------------------------------\n'));
-console.log(chalk.bold(teen('- Author')));
+console.log(chalk.bold(pgsGradient('- Author')));
 console.log(`${chalk.bold(config.author)}`);
 console.log(('\n---------------------------------------------------------------------\n'));
 

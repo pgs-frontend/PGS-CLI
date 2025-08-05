@@ -2,13 +2,13 @@
 
 import { Command } from "commander";
 import startPGSCLI from './cli/start.js';
-import CLICommands from "./cli/index.js";
 import config from "./cli/config.js";
-import auth from "./cli/commands/auth.js";
-import createTemplate from "./cli/commands/create.js";
-import {AuthChecker} from "./cli/app.js";
+import TemplatesSection from "./cli/commands/templates.js";
+import {AuthChecker, LogoutSection, LoginSection, CLIDefaultSection} from "./cli/app.js";
 
 const program = new Command();
+
+export const session = {}
 
 async function PGSCli(){
 
@@ -19,11 +19,12 @@ async function PGSCli(){
     .description("Login to the system")
     .option("-e, --email <email>", "Email")
     .option("-p, --password <password>", "Password")
-    .action(auth.login);
+    .action(LoginSection);
 
     program
     .command("logout")
-    .action(auth.logout);
+    .description("Logout from the system")
+    .action(LogoutSection);
 
     await AuthChecker()
 
@@ -37,15 +38,21 @@ async function PGSCli(){
         .option("-h, --help", "Show help information")
         .option("-v, --ver", "Show help information")
         .option("-u, --user <user>", "User management")
-        .action(CLICommands);
+        .action(CLIDefaultSection);
 
     program
         .command("create")
         .description("Create a new template")
         .option("-t, --template <template>", "Template name")
-        .action(createTemplate);
+        .action(TemplatesSection);
 
     program.parse(process.argv);
 }
 
 PGSCli()
+
+process.on('uncaughtException', (error) => {
+    if (error instanceof Error && error.name === 'ExitPromptError') {
+      //
+    } else {}
+  });

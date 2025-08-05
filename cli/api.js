@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const cliAPI = axios.create({
-    baseURL: 'https://api.pgsio.com/api',
+    baseURL: 'http://localhost:8380/api',
     headers: {
         'Content-Type': 'application/json',
     }
